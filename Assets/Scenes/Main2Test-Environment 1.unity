@@ -18032,8 +18032,8 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 2522199363102571684, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  head: {fileID: 0}
-  canvasGroup: {fileID: 0}
+  head: {fileID: 1840487290}
+  canvasGroup: {fileID: 1428510580}
   startFadeTime: 1
   toggleFadeTime: 0.2
   hideDistance: 10

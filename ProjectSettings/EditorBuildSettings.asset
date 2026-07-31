@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Test-Wish.unity
     guid: 76581062c21c0374185e8790b3f5fa38
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main-Wish.unity
     guid: aa32bce419fa24540bbdcafb1b684924
   - enabled: 0
@@ -35,7 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainTest-Environment.unity
     guid: 80af11705930ace4f846b3360ce67a0f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Main2Test-Environment 1.unity
     guid: 412fba22c3c07164d96277dcdd7b5b4a
   - enabled: 0
