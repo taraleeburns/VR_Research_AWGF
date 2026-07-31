@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Diego Navia
-  productName: A World Gone Fabulous
+  companyName: Tara Lee Burns
+  productName: a world gone Fabulous
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -139,11 +139,13 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.1
+  bundleVersion: 0.3
   preloadedAssets:
   - {fileID: 0}
-  - {fileID: 3387182021985750851, guid: 072a1a8706e9a1d49851acb59f5f6a23, type: 2}
+  - {fileID: 11400000, guid: f1ed25f741d8711469c8f309dc9a7a1a, type: 2}
   - {fileID: -6920458480740203447, guid: 67c4d9fdb5561b049b44d6fb0f86bdc7, type: 2}
+  - {fileID: 3387182021985750851, guid: 072a1a8706e9a1d49851acb59f5f6a23, type: 2}
+  - {fileID: 11400000, guid: 408eda64137c93d429490bd8e8feebbf, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -164,7 +166,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DiegoNavia.VR_Research_Movement
+    Android: com.TaraLeeBurns.AWGF_VR
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -286,7 +288,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 240b8c1374f4dc54cbc8e879bb77cbc0, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:

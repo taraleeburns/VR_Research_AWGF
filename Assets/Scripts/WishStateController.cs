@@ -51,6 +51,10 @@ public class WishStateController : MonoBehaviour
     // Called when user finishes recording
     public void SetWishAudio(AudioClip newClip)
     {
+         Debug.Log(
+        $"SetWishAudio received on {gameObject.name}. " +
+        $"hasWish={hasWish}, clipLength={(newClip != null ? newClip.length : 0)}"
+    );
         if (hasWish) return;
         wishRecording.clip = newClip;
         hasWish = true;

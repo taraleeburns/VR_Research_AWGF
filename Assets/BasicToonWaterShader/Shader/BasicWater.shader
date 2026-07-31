@@ -29,9 +29,10 @@ Shader "Custom/BasicWaterShader"
         #pragma target 3.0
 
         #include "UnityCG.cginc"
+        
 
         sampler2D _MainTex;
-        sampler2D _CameraDepthTexture;
+UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
         fixed4 _Color, _TextureColor, _FoamColor;
         float _WaveSpeed, _WaveStrength, _WaveAmount, _WaveFrequency;
         float _TextureDistortion, _CartoonFactor;

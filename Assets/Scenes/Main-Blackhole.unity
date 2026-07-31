@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4684635801260773462, guid: 0beb75e7547bcae4b8761a172c4544b9, type: 3}
       propertyPath: targetTime
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4684635801260773462, guid: 0beb75e7547bcae4b8761a172c4544b9, type: 3}
       propertyPath: onTimerEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

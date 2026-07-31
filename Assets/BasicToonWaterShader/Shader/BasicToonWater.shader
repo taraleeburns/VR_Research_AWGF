@@ -36,6 +36,7 @@ Shader "Custom/BasicToonWaterShader"
             #pragma vertex vert
             #pragma fragment frag
             #include "UnityCG.cginc"
+                
 
             struct appdata
             {
@@ -70,11 +71,11 @@ Shader "Custom/BasicToonWaterShader"
 
         CGPROGRAM
         #pragma surface surf ToonRamp alpha
-        #pragma target 3.0
+#pragma target 3.0
 
-        sampler2D _MainTex;
-        sampler2D _CameraDepthTexture;
-        fixed4 _Color, _EdgeColor, _FoamColor;
+sampler2D _MainTex;
+UNITY_DECLARE_DEPTH_TEXTURE(_CameraDepthTexture);
+fixed4 _Color, _EdgeColor, _FoamColor;
         float _WaveSpeed, _WaveStrength, _WaveAmount, _WaveFrequency;
         float _TextureDistortion, _CartoonFactor, _ColorSteps, _EdgeThreshold;
         float _FoamAmount, _FoamCutoff, _FoamSpeed, _FoamNoiseScale;

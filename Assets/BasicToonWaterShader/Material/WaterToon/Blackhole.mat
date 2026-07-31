@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Blackhole
-  m_Shader: {fileID: 4800000, guid: 805c7ee04b94d7b41a346925498e1d2f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 8144a7b09e8b6fb43b759783a3e0d2f8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -131,6 +131,8 @@ Material:
     - _TextureBlend: 0.672
     - _TextureDistortion: 1
     - _Transparency: 0.392
+    - _TransparencySpeed: 1
+    - _TransparencyStrength: 0.5
     - _UVSec: 0
     - _WaveAmount: 1
     - _WaveAmplitude: 0.1
@@ -154,4 +156,5 @@ Material:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShallowColor: {r: 0, g: 0.8595505, b: 1, a: 0.725}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TextureColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -7,8 +7,12 @@ public class AudioRecorder : MonoBehaviour
 {
     private AudioClip recordedClip;
 
+    private static AudioRecorder activeRecorder;
+
     [SerializeField] private AudioSource audioSource;
     public AudioSource comeCloserSFX;
+
+    public int wishId = 0;
 
     private string directoryPath;
 
@@ -22,7 +26,7 @@ public class AudioRecorder : MonoBehaviour
 
     private void Awake()
     {
-        directoryPath = Path.Combine(Application.dataPath, "Recordings");
+        directoryPath = Path.Combine(Application.persistentDataPath, "Recordings");
 
         if (!Directory.Exists(directoryPath))
         {
@@ -42,21 +46,45 @@ public class AudioRecorder : MonoBehaviour
         Debug.Log("canRecord changed: " + canRecord);
         Debug.Log($"[Trigger] {gameObject.name} | ID: {GetInstanceID()}");
     }
+public void StopRecordingDelayed()
+{
+    StartCoroutine(StopNextFrame());
+}
 
+private IEnumerator StopNextFrame()
+{
+    yield return null;    // wait exactly one frame
+    StopRecording();
+}
     // -------------------------
     // START RECORDING
     // -------------------------
-    public void StartRecording()
-    {
-        if (clipRecorded || isRecording)
-            return;
+public void StartRecording()
+{
+    Debug.Log(
+    $"StartRecording called on {gameObject.name}\n" +
+    $"clipRecorded={clipRecorded}, isRecording={isRecording}, canRecord={canRecord}\n" +
+    StackTraceUtility.ExtractStackTrace()
+);
 
-        if (!canRecord)
-        {
-            playComeCloser();
-            Debug.Log("Cannot record: outside trigger area");
-            return;
-        }
+    if (clipRecorded)
+    {
+        Debug.Log("StartRecording aborted: clip already recorded.");
+        return;
+    }
+
+    if (isRecording)
+    {
+        Debug.Log("StartRecording aborted: already recording.");
+        return;
+    }
+
+    if (!canRecord)
+    {
+        Debug.Log("StartRecording aborted: canRecord is false.");
+        playComeCloser();
+        return;
+    }
 
         string device = Microphone.devices.Length > 0
             ? Microphone.devices[0]
@@ -82,9 +110,11 @@ public class AudioRecorder : MonoBehaviour
     // -------------------------
     public void StopRecording()
     {
+        Debug.Log($"StopRecording CALLED | isRecording = {isRecording}");
         if (!isRecording)
             return;
-
+try
+    {
         string device = Microphone.devices.Length > 0
             ? Microphone.devices[0]
             : null;
@@ -126,14 +156,28 @@ public class AudioRecorder : MonoBehaviour
 
         audioSource.clip = recordedClip;
 
+        Debug.Log(
+    $"About to assign wish audio. " +
+    $"wishState={(wishState != null ? wishState.gameObject.name : "NULL")} " +
+    $"clip={(recordedClip != null ? recordedClip.length : 0)}"
+);
+
         if (wishState != null)
             wishState.SetWishAudio(recordedClip);
 
         clipRecorded = true;
-        isRecording = false;
-
         Debug.Log($"Recorded samples: {position}");
         Debug.Log("Clip length: " + recordedClip.length);
+       }
+    catch (System.Exception e)
+    {
+        Debug.LogError($"StopRecording failed: {e}");
+    }
+    finally
+    {
+        isRecording = false;   // ALWAYS resets, no matter what went wrong above
+    }
+
     }
 
     // -------------------------
@@ -147,8 +191,8 @@ public class AudioRecorder : MonoBehaviour
             return;
         }
 
-        int fileCount = Directory.GetFiles(directoryPath, "*.wav").Length;
-        string filePath = Path.Combine(directoryPath, "recording_" + fileCount + ".wav");
+        //int fileCount = Directory.GetFiles(directoryPath, "*.wav").Length;
+        string filePath = Path.Combine(directoryPath, "recording_" + wishId + ".wav");
 
         WavUtility.Save(filePath, recordedClip);
 
