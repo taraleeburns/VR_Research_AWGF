@@ -980,8 +980,19 @@
                 },
                 {
                     "name": "",
-                    "id": "34ee0b78-fab0-401a-9850-f0427359da05",
-                    "path": "<XRController>{LeftHand}/{MenuButton}",
+                    "id": "06aca6d2-958e-49e5-98af-660643c35bbd",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "74500835-f8cd-42e9-aba9-ff718ec08702",
+                    "path": "<XRController>{RightHand}/primaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
