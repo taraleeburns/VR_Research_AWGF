@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main-Environment.unity
     guid: 763b6118220fbf34e908d5e209f01d0d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main-Blackhole.unity
     guid: 090f523a4906b134db98fe9a9a0da537
   - enabled: 0

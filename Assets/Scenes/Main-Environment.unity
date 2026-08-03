@@ -18361,6 +18361,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8096159634218316862, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
+      propertyPath: m_Name
+      value: Plane-music trigger
+      objectReference: {fileID: 0}
     - target: {fileID: 9010876956977394214, guid: d8e25a6c7c422694baa8485feed9a7b7, type: 3}
       propertyPath: m_ReceiveShadows
       value: 0
